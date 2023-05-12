@@ -54,8 +54,12 @@ if((float) ( (map->size) / (map->capacity) )>= 0.7)
 }
 
 void enlarge(HashMap * map) {
-    enlarge_called = 1; //no borrar (testing purposes)
-
+  enlarge_called = 1; //no borrar (testing purposes)
+  Pair ** old_buckets = map -> buckets;
+  map->capacity*=2;
+  Pair ** nuevo = calloc(sizeof(Pair *) , map->capacity);
+  
+  
 
 }
 
@@ -103,11 +107,11 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-for (int i = map->current + 1; i < map->capacity; i++) {
+  for (int i = map->current + 1; i < map->capacity; i++) {
         if (map->buckets[i] != NULL && map->buckets[i]->key != NULL) {
             map->current = i;
             return map->buckets[i];
         }
     }
-    return NULL;
+  return NULL;
 }
