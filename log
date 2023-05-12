@@ -94,3 +94,14 @@ hashmap.c:58:11: error: unused variable ‘old_buckets’ [-Werror=unused-variab
 cc1: all warnings being treated as errors
 Compilation failed
 874d71a
+Fri 12 May 2023 03:07:51 PM UTC: 
+ hashmap.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:62:34: error: ‘*old_buckets’ is a pointer; did you mean to use ‘->’?
+   62 |   for (int i = 0; i < old_buckets->capacity; i++) {
+      |                                  ^~
+      |                                  ->
+Compilation failed
+d40ebba
