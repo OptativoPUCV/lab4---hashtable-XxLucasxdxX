@@ -38,3 +38,15 @@ Fri 12 May 2023 02:20:00 PM UTC:
  tests:  1|5
 total_score: 10/70
 29e21a0
+Fri 12 May 2023 02:43:45 PM UTC: 
+ hashmap.c | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:44:56: error: ‘pos’ undeclared (first use in this function); did you mean ‘pow’?
+   44 |   while(map->buckets[posicion] != NULL && map->buckets[pos]->key != NULL){
+      |                                                        ^~~
+      |                                                        pow
+hashmap.c:44:56: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+f9aa341
